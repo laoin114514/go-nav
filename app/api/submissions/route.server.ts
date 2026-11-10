@@ -21,6 +21,7 @@ import {
 	readWebsiteData,
 	writeWebsiteData,
 } from "@/lib/server/store";
+import { fillMissingSiteIcon } from "@/lib/server/auto-icon";
 import {
 	isSameSubmissionUrl,
 	normalizeSubmissionInput,
@@ -304,7 +305,7 @@ export async function PATCH(req: Request) {
 	}
 	try {
 		const body = parseReviewBody(await readJsonBody(req));
-		return await withSubmissionMutationLock(() => {
+		return await withSubmissionMutationLock(async () => {
 			const data = readSubmissionData();
 			const index = data.submissions.findIndex((item) => item.id === body.id);
 			if (index < 0) return json({ error: "投稿记录不存在" }, { status: 404 });
@@ -334,6 +335,10 @@ export async function PATCH(req: Request) {
 			if (!category) throw new Error("目标分类不存在，请刷新后重试");
 			if (category.children?.length) throw new Error("请选择没有子分类的分类");
 			const site = parseApprovedSite(body.site, current);
+			if (!site.icon?.trim()) {
+				// 审核收录时若投稿没有图标，自动抓取目标网站自己的 favicon。
+				await fillMissingSiteIcon(site, { budgetMs: 8_000 });
+			}
 			if (
 				allSites(websiteData.categories).some(
 					(item) => isSameSubmissionUrl(item.url, site.url),

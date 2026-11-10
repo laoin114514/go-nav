@@ -19,6 +19,7 @@ laoin小站 既可以作为带登录后台的 Node.js 应用运行，也可以�
 
 - JSON / YAML 配置驱动，无需数据库
 - 多级分类、网址管理、站内搜索和外部搜索引擎
+- 保存配置时自动为未设置图标的网址抓取目标网站 favicon（复用图床/本地上传配置）
 - 响应式布局、明暗主题、最近访问和移动端导航
 - Server 模式支持前台访问密码，验证后才显示导航内容
 - 网站信息、页脚、布局、广告、搜索引擎和自定义插件配置
@@ -447,6 +448,7 @@ data/
 | `DATA_FILE_FORMAT`     | `json`               | 配置文件优先格式，可选 `json` / `yaml` |
 | `NEXT_PUBLIC_SITE_URL` | -                    | 用于生成 sitemap 的网站地址            |
 | `NEXT_PUBLIC_BASE_PATH` | 空（Compose 默认 `/laoin-site`） | 部署子路径，构建时内联，修改后需重建 |
+| `FETCH_ALLOW_FAKE_IP`  | 空（关闭）           | 部署环境使用 Clash/VPN fake-ip（`198.18.0.0/15`）时设为 `1`，否则服务端抓取图标会被 SSRF 防护拦截 |
 | `PORT`                 | `3000`               | Docker Compose 宿主机映射端口          |
 
 HTML 和 Static 模式没有服务端登录与请求校验能力，因此后台登录和前台访问密码保护均不可用，`ADMIN_USER`、`ADMIN_PASS` 和 `SESSION_SECRET` 对它们无效。

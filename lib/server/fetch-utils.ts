@@ -8,6 +8,19 @@ export interface PublicFetchOptions extends Omit<RequestInit, "redirect" | "sign
 	maxBytes?: number;
 }
 
+/**
+ * 是否允许把 198.18.0.0/15 当作公网地址。
+ *
+ * 该网段是 Clash / 部分 VPN 的 fake-ip 池：启用 TUN/虚拟网卡时，
+ * 所有公网域名都会解析到这里。默认按保留地址拦截（SSRF 防护）；
+ * 在只跑于本机代理环境的部署里可设置 FETCH_ALLOW_FAKE_IP=1 放行。
+ * 其余内网 / 回环 / 链路本地地址始终拦截。
+ */
+function allowFakeIpAddressRange(): boolean {
+	const value = (process.env.FETCH_ALLOW_FAKE_IP ?? "").trim().toLowerCase();
+	return value === "1" || value === "true" || value === "yes" || value === "on";
+}
+
 function isPrivateIpv4(address: string): boolean {
 	const parts = address.split(".").map((part) => Number.parseInt(part, 10));
 	if (parts.length !== 4 || parts.some((part) => !Number.isFinite(part))) {
@@ -23,7 +36,7 @@ function isPrivateIpv4(address: string): boolean {
 		(a === 169 && b === 254) ||
 		(a === 172 && b >= 16 && b <= 31) ||
 		(a === 192 && b === 168) ||
-		(a === 198 && (b === 18 || b === 19))
+		(a === 198 && (b === 18 || b === 19) && !allowFakeIpAddressRange())
 	);
 }
 

@@ -854,6 +854,290 @@
           ]
         }
       ]
+    },
+    {
+      "id": "group-16",
+      "name": "本地工具",
+      "icon": "🔧",
+      "description": "使用部署于airmongsity.duckdns.org的工具",
+      "sites": [
+        {
+          "title": "文件快传",
+          "description": "Read ONLY",
+          "url": "http://airmongsity.duckdns.org:7234",
+          "icon": "https://static.laoin.work/img/2026/11/10/8669e4641ba40ec0967707e2.png"
+        },
+        {
+          "title": "文字渲染",
+          "description": "Render",
+          "url": "http://airmongsity.duckdns.org:17900",
+          "icon": "https://static.laoin.work/img/2026/11/10/fdb8bca980a4efa67c17c05b.svg"
+        },
+        {
+          "title": "随机数生成",
+          "description": "Generator",
+          "url": "http://airmongsity.duckdns.org:19033/",
+          "icon": "https://static.laoin.work/img/2026/11/10/90d9011814ebd42770e6d2a0.svg"
+        },
+        {
+          "title": "文件下载站",
+          "description": "FileHub",
+          "url": "https://airmongsity.duckdns.org:17655/",
+          "icon": "https://static.laoin.work/img/2026/11/10/3343457e7f7abcbaf8398ee9.svg"
+        }
+      ]
+    },
+    {
+      "id": "group-14",
+      "name": "嘎啦给木",
+      "icon": "👧",
+      "description": "免费二次元视频、黄色视频和美少女游戏",
+      "sites": [
+        {
+          "title": "萌站-ACGN",
+          "description": "MACGN",
+          "url": "https://www.mengzhan24.xyz/?u=MTgxOTk=/"
+        },
+        {
+          "title": "木瓜ACG",
+          "description": "MGWU",
+          "url": "https://www.mgwu.cc/",
+          "icon": "https://static.laoin.work/img/2026/11/10/03d8a54b1cb2ecbac2adcab4.png"
+        },
+        {
+          "title": "TouchGal",
+          "description": "TouchGal",
+          "url": "https://www.touchgal.ink/"
+        },
+        {
+          "title": "次元终点",
+          "description": "CYZD",
+          "url": "https://cyzd.top/"
+        },
+        {
+          "title": "HikarinAGI",
+          "description": "HikarinAGI",
+          "url": "https://www.hikarinagi.org/",
+          "icon": "https://static.laoin.work/img/2026/11/10/f3733b842e6cb526e1a9692d.ico"
+        },
+        {
+          "title": "Iwara",
+          "description": "Iwara",
+          "url": "https://www.iwara.tv/"
+        },
+        {
+          "title": "ACG-Database",
+          "description": "ACG-Database",
+          "url": "https://acgdb.de/",
+          "icon": "https://static.laoin.work/img/2026/11/10/c11875c5f9cfe56c51ecc06b.png"
+        },
+        {
+          "title": "ACG嘤嘤怪~",
+          "description": "ACGYYG",
+          "url": "https://acgyyg.cc/",
+          "icon": "https://static.laoin.work/img/2026/11/10/73ac4e68608c6ae7bd3ad847.ico"
+        },
+        {
+          "title": "量子ACG",
+          "description": "LZACG",
+          "url": "https://lzacg.cc/"
+        },
+        {
+          "title": "NekoGal",
+          "description": "NekoGal",
+          "url": "https://www.nekogal.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/46db0419232b71a49e0f914b.png"
+        },
+        {
+          "title": "芯幻",
+          "description": "很多嘎啦给木",
+          "url": "https://xhcyv.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/2f8e420660a768a3dc670718.svg"
+        },
+        {
+          "title": "ColaManga",
+          "description": "ColaManga",
+          "url": "https://www.colamanga.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/00ec3115e78a5f8b0c8acb86.png"
+        }
+      ]
+    },
+    {
+      "id": "group-15",
+      "name": "盗版游戏",
+      "icon": "🎮",
+      "description": "盗版游戏 & 软件发布平台",
+      "sites": [
+        {
+          "title": "FitGirl-Repacks",
+          "description": "Direct or Torrent",
+          "url": "https://fitgirl-repacks.site/",
+          "icon": "https://static.laoin.work/img/2026/11/10/516e1c2364da9857fcbba13d.jpg"
+        },
+        {
+          "title": "单机派",
+          "description": "Online Drive ONLY",
+          "url": "https://www.danjipai.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/73cea1983fd9bec67d3abd48.ico"
+        },
+        {
+          "title": "114game",
+          "description": "Online Drive ONLY",
+          "url": "https://www.114game.net/",
+          "icon": "https://static.laoin.work/img/2026/11/10/f40ea4abfbeedd3ad3572fe4.svg"
+        },
+        {
+          "title": "Skidrow & Reloaded Crack",
+          "description": "Direct or Torrent",
+          "url": "https://www.skidrowreloadedcrack.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/a8ae59c0716f1c8de0715087.png"
+        },
+        {
+          "title": "Ocean-of-Games",
+          "description": "Ocean-of-Games",
+          "url": "https://oceanofgamesu.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/2d41d929bd565a368429a519.png"
+        },
+        {
+          "title": "Gamer520",
+          "description": "Gamer520",
+          "url": "https://www.gamer520.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/5621e05670d2d4d462dfe032.png"
+        },
+        {
+          "title": "懒狗资源站",
+          "description": "Online Drive ONLY",
+          "url": "https://www.langou123.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/af12746135a90799a951dc8b.svg"
+        },
+        {
+          "title": "LiteAPKs",
+          "description": "LiteAPKs",
+          "url": "https://liteapks.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/1ef66a48d372edde5c9ead88.ico"
+        },
+        {
+          "title": "9mod",
+          "description": "Direct ONLY",
+          "url": "https://9mod.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/b88eeba0f26993d6ab9b8b00.png"
+        },
+        {
+          "title": "RARBG",
+          "description": "Torrent ONLY",
+          "url": "https://rargb.to/"
+        },
+        {
+          "title": "Irepacks",
+          "description": "Repack ONLY",
+          "url": "https://lrepacks.net/",
+          "icon": "https://static.laoin.work/img/2026/11/10/7d47b2aad62e39964a64d31d.png"
+        },
+        {
+          "title": "Repack me",
+          "description": "Repack ONLY",
+          "url": "https://repack.me/",
+          "icon": "https://static.laoin.work/img/2026/11/10/464b4a4458b46cb175de106b.ico"
+        },
+        {
+          "title": "辰夕小站",
+          "description": "CXAPK",
+          "url": "https://cxapk.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/c23a7060eba68dc594c6910b.png"
+        },
+        {
+          "title": "App热",
+          "description": "点亮未来，见证精彩~",
+          "url": "https://apphot.cc/",
+          "icon": "https://static.laoin.work/img/2026/11/10/37da798deb87498990b26701.ico"
+        }
+      ]
+    },
+    {
+      "id": "group-17",
+      "name": "学习",
+      "icon": "📕",
+      "description": "Learn something...",
+      "sites": [
+        {
+          "title": "Free Programming Books",
+          "description": "免费编程书籍",
+          "url": "https://github.com/EbookFoundation/free-programming-books",
+          "icon": "https://static.laoin.work/img/2026/11/10/b526c6c07d4eae742aa8e3bb.png"
+        },
+        {
+          "title": "WeLib",
+          "description": "免费书籍及文章",
+          "url": "https://zh.welib.org/",
+          "icon": "https://static.laoin.work/img/2026/11/10/0ec42885cb4ccc5c3eca2512.ico"
+        },
+        {
+          "title": "XD学习网",
+          "description": "小刀学习网",
+          "url": "https://www.xuexi67.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/ad94334dc4e6d1866b2aa456.ico"
+        }
+      ]
+    },
+    {
+      "id": "group-18",
+      "name": "常用工具",
+      "icon": "🔧",
+      "description": "万一能用上呢？",
+      "sites": [
+        {
+          "title": "ILovePDF",
+          "description": "PDF转换工具",
+          "url": "https://www.ilovepdf.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/2cd193a5e75f3a61cbc3940f.png"
+        },
+        {
+          "title": "SteamDB Free Games",
+          "description": "谁不想每天打开Steam看看今天能领什么游戏呢？",
+          "url": "https://steamdb.info/upcoming/free/",
+          "icon": "https://static.laoin.work/img/2026/11/10/def47a1c5b0d0c8dd7e25222.ico"
+        },
+        {
+          "title": "Rick Roll to",
+          "description": "shorten a link",
+          "url": "https://rroll.to/",
+          "icon": "https://static.laoin.work/img/2026/11/10/002a28f3e19c3b4fb7843f94.png"
+        }
+      ]
+    },
+    {
+      "id": "group-19",
+      "name": "免费电影",
+      "icon": "📺",
+      "description": "电影天堂",
+      "sites": [
+        {
+          "title": "电影天堂",
+          "description": "DYGOD",
+          "url": "https://www.dygod.net/",
+          "icon": "https://static.laoin.work/img/2026/11/10/c322a51b57b26f8bacc140c2.ico"
+        }
+      ]
+    },
+    {
+      "id": "group-20",
+      "name": "黄片网站",
+      "icon": "👧",
+      "description": "色情网站发布页",
+      "sites": [
+        {
+          "title": "The Porn Dude",
+          "description": "Free & Paid Porn",
+          "url": "https://theporndude.com/",
+          "icon": "https://static.laoin.work/img/2026/11/10/9d8cdb2a8c6e6d66dd99f2d7.ico"
+        },
+        {
+          "title": "女菩萨",
+          "description": "Free Porn",
+          "url": "https://nv-pu-sa.pages.dev/",
+          "icon": "https://static.laoin.work/img/2026/11/10/674b2c32cafa49e18eab3823.png"
+        }
+      ]
     }
   ]
 }

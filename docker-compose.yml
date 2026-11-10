@@ -18,5 +18,7 @@ services:
       # 与构建时保持一致，供服务端运行时代码读取。
       NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH-/laoin-site}
       NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
+      # 部署环境使用 Clash/VPN fake-ip（198.18.0.0/15）时设为 1，否则服务端抓取图标会被 SSRF 防护拦截。
+      FETCH_ALLOW_FAKE_IP: ${FETCH_ALLOW_FAKE_IP:-0}
     volumes:
       - ./go-nav-data:/app/data

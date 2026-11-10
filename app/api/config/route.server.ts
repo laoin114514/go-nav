@@ -2,6 +2,10 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 import type { NavConfig, WebsiteData } from "@/types";
 import { SESSION_COOKIE, verifySession } from "@/lib/server/auth";
+import {
+	fillMissingWebsiteIcons,
+	type FillMissingIconsResult,
+} from "@/lib/server/auto-icon";
 import { revalidateFrontendPaths } from "@/lib/server/revalidate-frontend";
 import {
 	getSafeAccessProtectionConfig,
@@ -79,13 +83,29 @@ export async function PUT(req: Request) {
 		const savedNav = body.nav
 			? prepareNavForWrite(body.nav, readNav())
 			: undefined;
-		if (body.websiteData) writeWebsiteData(body.websiteData);
+		let iconStats: FillMissingIconsResult | undefined;
+		if (body.websiteData) {
+			// 写入前为没有设置图标的网站自动抓取 favicon（有超时预算，失败不影响保存）。
+			try {
+				iconStats = await fillMissingWebsiteIcons(body.websiteData);
+				if (iconStats.filled > 0) {
+					console.info(
+						`[auto-icon] 已自动补全 ${iconStats.filled} 个网站图标` +
+							(iconStats.timedOut ? "（超出时间预算，剩余项将在下次保存继续）" : ""),
+					);
+				}
+			} catch (e) {
+				console.warn(`[auto-icon] 自动抓取图标失败：${(e as Error).message}`);
+			}
+			writeWebsiteData(body.websiteData);
+		}
 		if (savedNav) writeNav(savedNav);
 		revalidateFrontendPaths();
 		const revision = getConfigRevision();
 		const res = NextResponse.json({
 			ok: true,
 			revision,
+			...(iconStats ? { iconStats } : {}),
 			...(savedNav
 				? {
 						accessProtection: getSafeAccessProtectionConfig(

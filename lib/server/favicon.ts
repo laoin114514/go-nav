@@ -8,8 +8,31 @@ import { readNav } from "@/lib/server/store";
 const MAX_FAVICON_SIZE = 2 * 1024 * 1024;
 const REQUEST_TIMEOUT = 15_000;
 const MAX_FAVICON_CANDIDATES = 6;
-const DATA_URL_IMAGE_RE =
-	/^data:image\/([^;]+);base64,([a-z0-9+/=\s]+)$/i;
+
+/**
+ * 解析 data:image/... 图标，兼容 base64 与 URL 编码两种写法。
+ * 返回的 mime 不含 "image/" 前缀。
+ */
+function decodeDataImageUrl(value: string): { mime: string; bytes: Buffer } | null {
+	const commaIndex = value.indexOf(",");
+	if (commaIndex < 0) return null;
+	const header = value.slice("data:".length, commaIndex);
+	const payload = value.slice(commaIndex + 1);
+	const parts = header.split(";");
+	const mime = (parts[0] || "").trim().toLowerCase();
+	if (!mime.startsWith("image/")) return null;
+	const isBase64 = parts.some(
+		(part) => part.trim().toLowerCase() === "base64",
+	);
+	try {
+		const bytes = isBase64
+			? Buffer.from(payload.replace(/\s/g, ""), "base64")
+			: Buffer.from(decodeURIComponent(payload), "utf-8");
+		return { mime: mime.slice("image/".length), bytes };
+	} catch {
+		return null;
+	}
+}
 
 interface FaviconCandidate {
 	href: string;
@@ -19,6 +42,8 @@ interface FaviconCandidate {
 
 export interface SaveFaviconOptions {
 	fileNamePrefix?: string;
+	/** 下载超时（毫秒），默认 15s；批量抓取图标时可调小。 */
+	timeoutMs?: number;
 }
 
 /**
@@ -71,21 +96,20 @@ export async function saveFaviconFromUrl(
 	let ext: string;
 
 	if (faviconUrl.startsWith("data:image/")) {
-		const match = faviconUrl.match(DATA_URL_IMAGE_RE);
-		if (!match) throw new Error("无效的图标 Data URL");
+		const decoded = decodeDataImageUrl(faviconUrl);
+		if (!decoded) throw new Error("无效的图标 Data URL");
 
-		const encoded = match[2].replace(/\s/g, "");
-		const estimatedBytes = Math.floor((encoded.length * 3) / 4);
+		const estimatedBytes = decoded.bytes.length;
 		if (estimatedBytes > MAX_FAVICON_SIZE) {
 			throw new Error("图标过大（最大 2MB）");
 		}
 
-		ext = imageMimeToExtension(match[1]);
-		bytes = Buffer.from(encoded, "base64");
+		ext = imageMimeToExtension(decoded.mime);
+		bytes = decoded.bytes;
 	} else {
 		const res = await fetchPublicResource(faviconUrl, {
 			method: "GET",
-			timeoutMs: REQUEST_TIMEOUT,
+			timeoutMs: options?.timeoutMs ?? REQUEST_TIMEOUT,
 			maxBytes: MAX_FAVICON_SIZE,
 			headers: {
 				"User-Agent":
