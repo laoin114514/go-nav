@@ -11,6 +11,7 @@ import {
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { Autoplay, Keyboard } from "swiper/modules";
 import { Swiper, SwiperSlide, type SwiperClass } from "swiper/react";
+import { withBasePath } from "@/lib/base-path";
 import type { AdConfig, AdDisplayPosition, CardStyle } from "@/types";
 import {
 	DEFAULT_AD_AUTOPLAY_INTERVAL,
@@ -78,7 +79,7 @@ function AdCard({
 				{ad.image ? (
 					// eslint-disable-next-line @next/next/no-img-element
 					<img
-						src={ad.image}
+						src={withBasePath(ad.image)}
 						alt={ad.title}
 						className="h-full w-full object-cover"
 						loading={isEager ? "eager" : "lazy"}

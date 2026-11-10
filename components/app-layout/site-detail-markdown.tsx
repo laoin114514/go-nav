@@ -3,6 +3,7 @@
 import ReactMarkdown from "react-markdown";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
+import { withBasePath } from "@/lib/base-path";
 
 export function SiteDetailMarkdown({ markdown }: { markdown: string }) {
 	return (
@@ -25,7 +26,12 @@ export function SiteDetailMarkdown({ markdown }: { markdown: string }) {
 					},
 					img: ({ src, alt }) => (
 						// eslint-disable-next-line @next/next/no-img-element
-						<img src={src} alt={alt ?? ""} loading="lazy" decoding="async" />
+						<img
+							src={typeof src === "string" ? withBasePath(src) : undefined}
+							alt={alt ?? ""}
+							loading="lazy"
+							decoding="async"
+						/>
 					),
 				}}
 			>

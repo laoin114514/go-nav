@@ -21,6 +21,7 @@ import {
 } from "react-icons/bi";
 import { Autoplay, Keyboard } from "swiper/modules";
 import { Swiper, SwiperSlide, type SwiperClass } from "swiper/react";
+import { withBasePath } from "@/lib/base-path";
 import { useOverlayAfterClose } from "@/hooks/use-overlay-after-close";
 
 interface GalleryCardProps {
@@ -145,7 +146,7 @@ function GalleryCard({
 				{/* 动态配置允许任意远程图床，无法预先写入 Next Image remotePatterns。 */}
 				{/* eslint-disable-next-line @next/next/no-img-element */}
 				<img
-					src={src}
+					src={withBasePath(src)}
 					alt={`${title} 预览图 ${originalIndex + 1}`}
 					loading={isEager ? "eager" : "lazy"}
 					decoding="async"
@@ -726,7 +727,7 @@ export function SiteDetailGallery({
 									isEager
 									onOpen={() => openPreview(originalIndex)}
 									originalIndex={originalIndex}
-									src={src}
+									src={withBasePath(src)}
 									title={title}
 								/>
 							</div>
@@ -800,7 +801,7 @@ export function SiteDetailGallery({
 												isEager={isInitiallyVisible}
 												onOpen={() => openPreview(originalIndex)}
 												originalIndex={originalIndex}
-												src={src}
+												src={withBasePath(src)}
 												title={title}
 											/>
 										);
@@ -1148,7 +1149,7 @@ export function SiteDetailGallery({
 										<img
 											key={`${images[previewIndex]}-${previewIndex}`}
 											ref={viewerImageRef}
-											src={images[previewIndex]}
+											src={withBasePath(images[previewIndex])}
 											alt={`${title} 预览图 ${previewIndex + 1}`}
 											data-direction={viewerTransitionDirection}
 											draggable={false}
@@ -1336,7 +1337,7 @@ export function SiteDetailGallery({
 															>
 																{/* eslint-disable-next-line @next/next/no-img-element */}
 																<img
-																	src={src}
+																	src={withBasePath(src)}
 																	alt=""
 																	draggable={false}
 																	className="h-full w-full object-cover"

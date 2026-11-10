@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import type { Key } from "@heroui/react";
 import {
     Button,
@@ -273,7 +275,7 @@ async function fetchWebsitePatch(
 		  }
 		| undefined;
 	if (needsSiteMeta) {
-		const res = await fetch("/api/fetch-website/", {
+		const res = await fetch(withBasePath("/api/fetch-website/"), {
 			method: "POST",
 			signal,
 			headers: { "Content-Type": "application/json" },
@@ -316,7 +318,7 @@ async function fetchWebsitePatch(
 	}
 	if (shouldUpdatePreviewImage) {
 		try {
-			const previewRes = await fetch("/api/tools/capturePreview/", {
+			const previewRes = await fetch(withBasePath("/api/tools/capturePreview/"), {
 				method: "POST",
 				signal,
 				headers: { "Content-Type": "application/json" },
@@ -1140,7 +1142,7 @@ export function BatchOperationsEditor() {
 													{row.previewImage ? (
 														// eslint-disable-next-line @next/next/no-img-element
 														<img
-															src={row.previewImage}
+															src={withBasePath(row.previewImage)}
 															alt={row.title}
 															className="h-7 w-12 rounded border border-default object-cover"
 														/>

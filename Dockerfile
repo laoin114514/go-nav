@@ -24,6 +24,12 @@ WORKDIR /app
 ENV BUILD_MODE=server
 ENV NEXT_TELEMETRY_DISABLED=1
 
+# 部署子路径（如 /laoin-site）与站点域名都在构建时内联，必须通过 build arg 传入。
+ARG NEXT_PUBLIC_BASE_PATH=""
+ARG NEXT_PUBLIC_SITE_URL=""
+ENV NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 

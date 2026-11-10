@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import { useScrollContainment } from "@/hooks/use-scroll-containment";
 import { useOverlayAfterClose } from "@/hooks/use-overlay-after-close";
 
@@ -399,7 +401,7 @@ function SortableSiteRow({
 				{site.previewImage ? (
 					// eslint-disable-next-line @next/next/no-img-element
 					<img
-						src={site.previewImage}
+						src={withBasePath(site.previewImage)}
 						alt=""
 						className="h-10 w-16 rounded-lg border border-default object-cover"
 					/>
@@ -637,7 +639,7 @@ function PreviewImagePicker({
 					{value ? (
 						// eslint-disable-next-line @next/next/no-img-element
 						<img
-							src={value}
+							src={withBasePath(value)}
 							alt=""
 							className="h-full w-full object-cover"
 							loading="lazy"
@@ -783,7 +785,7 @@ function DetailPreviewImagesPicker({
 							<div className="aspect-video bg-default/30">
 								{/* eslint-disable-next-line @next/next/no-img-element */}
 								<img
-									src={image}
+									src={withBasePath(image)}
 									alt={`详情预览图 ${index + 1}`}
 									className="h-full w-full object-cover"
 									loading="lazy"
@@ -1414,7 +1416,7 @@ export function SitesEditor() {
 		}
 		setFetchingInfo(true);
 		try {
-			const res = await fetch("/api/fetch-website/", {
+			const res = await fetch(withBasePath("/api/fetch-website/"), {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ url: editingSite.url }),
@@ -1468,7 +1470,7 @@ export function SitesEditor() {
 		}
 		setCapturingPreview(true);
 		try {
-			const res = await fetch("/api/tools/capturePreview/", {
+			const res = await fetch(withBasePath("/api/tools/capturePreview/"), {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ url: editingSite.url }),

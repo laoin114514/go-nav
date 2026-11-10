@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import { CircleCheckFill, Clock, Tray, Xmark } from "@gravity-ui/icons";
 import type { Key } from "@heroui/react";
 import {
@@ -181,7 +183,7 @@ export function SubmissionEditor() {
 		}
 		setLoading(true);
 		try {
-			const response = await fetch("/api/submissions/", { cache: "no-store" });
+			const response = await fetch(withBasePath("/api/submissions/"), { cache: "no-store" });
 			const data = (await response
 				.json()
 				.catch(() => ({}))) as SubmissionApiResponse;
@@ -241,7 +243,7 @@ export function SubmissionEditor() {
 					.map((tag) => tag.trim())
 					.filter(Boolean),
 			};
-			const response = await fetch("/api/submissions/", {
+			const response = await fetch(withBasePath("/api/submissions/"), {
 				method: "PATCH",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({

@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import {
     Button,
     FieldError,
@@ -38,7 +40,7 @@ export function SiteAccessForm({
 		setIsPending(true);
 
 		try {
-			const response = await fetch("/api/site-access/unlock/", {
+			const response = await fetch(withBasePath("/api/site-access/unlock/"), {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ password }),
@@ -50,7 +52,7 @@ export function SiteAccessForm({
 				throw new Error(data.error || `验证失败（${response.status}）`);
 			}
 			const currentPath = `${window.location.pathname}${window.location.search}`;
-			window.location.replace(nextPath || currentPath);
+			window.location.replace(nextPath ? withBasePath(nextPath) : currentPath);
 		} catch (reason) {
 			setError(reason instanceof Error ? reason.message : "验证失败，请重试");
 		} finally {

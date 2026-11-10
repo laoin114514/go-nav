@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import { useScrollContainment } from "@/hooks/use-scroll-containment";
 import { useOverlayAfterClose } from "@/hooks/use-overlay-after-close";
 
@@ -61,7 +63,7 @@ export function BackupEditor() {
 		if (exporting) return;
 		setExporting(true);
 		try {
-			const res = await fetch("/api/backup/", { method: "GET" });
+			const res = await fetch(withBasePath("/api/backup/"), { method: "GET" });
 			if (!res.ok) {
 				const d = (await res.json().catch(() => ({}))) as { error?: string };
 				throw new Error(d.error || `导出失败 (${res.status})`);
@@ -116,7 +118,7 @@ export function BackupEditor() {
 			for (let chunkIndex = 0; chunkIndex < chunkCount; chunkIndex += 1) {
 				const start = chunkIndex * BACKUP_IMPORT_CHUNK_BYTES;
 				const end = Math.min(start + BACKUP_IMPORT_CHUNK_BYTES, pickedFile.size);
-				const res = await fetch("/api/backup/", {
+				const res = await fetch(withBasePath("/api/backup/"), {
 					method: "POST",
 					headers: {
 						...commonHeaders,
@@ -132,7 +134,7 @@ export function BackupEditor() {
 				);
 			}
 
-			const completeRes = await fetch("/api/backup/", {
+			const completeRes = await fetch(withBasePath("/api/backup/"), {
 				method: "POST",
 				headers: {
 					...commonHeaders,
@@ -169,7 +171,7 @@ export function BackupEditor() {
 		if (scanning || cleaning) return;
 		setScanning(true);
 		try {
-			const res = await fetch("/api/backup/cleanup/", { method: "GET" });
+			const res = await fetch(withBasePath("/api/backup/cleanup/"), { method: "GET" });
 			const d = (await res.json().catch(() => ({}))) as CleanupPreview & {
 				error?: string;
 			};
@@ -192,7 +194,7 @@ export function BackupEditor() {
 		if (!isPreviewOpen || !preview || preview.orphanCount === 0 || cleaning) return;
 		setCleaning(true);
 		try {
-			const res = await fetch("/api/backup/cleanup/", { method: "POST" });
+			const res = await fetch(withBasePath("/api/backup/cleanup/"), { method: "POST" });
 			const d = (await res.json().catch(() => ({}))) as {
 				deletedCount?: number;
 				failed?: { name: string; error: string }[];

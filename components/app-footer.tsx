@@ -3,6 +3,7 @@
 import { Link } from "@heroui/react";
 import Image from "next/image";
 import { memo } from "react";
+import { withBasePath } from "@/lib/base-path";
 import { useAtomValue } from "jotai";
 import {
 	footerLinksAtom,
@@ -73,7 +74,7 @@ export const AppFooter = memo(function AppFooter({
 						<div className="flex flex-col items-center text-center md:items-center md:text-right">
 							<div className="rounded overflow-hidden border dark:border-zinc-700">
 								<Image
-									src={qrCode}
+									src={withBasePath(qrCode)}
 									alt={qrCodeText ?? "公众号二维码"}
 									width={120}
 									height={120}
@@ -125,7 +126,7 @@ export const AppFooter = memo(function AppFooter({
 								className="inline-flex items-center gap-1 text-xs no-underline [@media(hover:hover)]:hover:underline"
 							>
 								<Image
-									src="/images/beian.png"
+									src={withBasePath("/images/beian.png")}
 									alt="公安备案图标"
 									width={14}
 									height={14}

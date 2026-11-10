@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { SiteAccessForm } from "@/components/site-access-form";
+import { stripBasePath } from "@/lib/base-path";
 import { readSiteAccessStatus } from "@/lib/server/site-access-request";
 
 export const metadata: Metadata = {
@@ -48,8 +49,9 @@ function getSafeNextPath(value: string | undefined): string {
 	try {
 		const url = new URL(value, "http://local");
 		if (url.origin !== "http://local") return "/";
-		if (url.pathname !== "/" && !url.pathname.startsWith("/site/")) return "/";
-		return `${url.pathname}${url.search}`;
+		const pathname = stripBasePath(url.pathname);
+		if (pathname !== "/" && !pathname.startsWith("/site/")) return "/";
+		return `${pathname}${url.search}`;
 	} catch {
 		return "/";
 	}

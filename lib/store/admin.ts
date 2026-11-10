@@ -7,6 +7,7 @@
  * - 按字段 + 数组项索引拆分，避免一次 setNav 引发全部编辑器重渲染。
  */
 import { atom } from "jotai";
+import { withBasePath } from "@/lib/base-path";
 import { atomFamily } from "jotai-family";
 import {
 	downloadConfigZip,
@@ -262,7 +263,7 @@ export const saveAtom = atom(null, async (get, set) => {
 			nav: get(navAtom),
 			revision: get(configRevisionAtom),
 		});
-		const res = await fetch("/api/config/", {
+		const res = await fetch(withBasePath("/api/config/"), {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getNav, getWebsiteData } from "@/lib/config";
 import { collectSiteDetailEntries } from "@/lib/site-detail";
+import { withBasePath } from "@/lib/base-path";
 
 export const dynamic = "force-static";
 
@@ -9,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const now = new Date();
 	const home: MetadataRoute.Sitemap = [
 		{
-			url: `${origin}/`,
+			url: `${origin}${withBasePath("/")}`,
 			lastModified: now,
 			changeFrequency: "daily",
 			priority: 1,
@@ -34,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	for (const entry of detailEntries) {
 		urls.push({
-			url: `${origin}${entry.path}/`,
+			url: `${origin}${withBasePath(entry.path)}/`,
 			lastModified: now,
 			changeFrequency: "weekly",
 			priority: 0.7,

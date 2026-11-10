@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import type { Key } from "@heroui/react";
 import {
 	Button,
@@ -339,7 +341,7 @@ export function ImageHostEditor() {
 	const loadConfig = useCallback(async () => {
 		setLoading(true);
 		try {
-			const res = await fetch("/api/image-host/config/", { method: "GET" });
+			const res = await fetch(withBasePath("/api/image-host/config/"), { method: "GET" });
 			const data = (await res.json().catch(() => ({}))) as
 				| PublicImageHostConfig
 				| { error?: string };
@@ -373,7 +375,7 @@ export function ImageHostEditor() {
 	const saveConfig = useCallback(async () => {
 		setSaving(true);
 		try {
-			const res = await fetch("/api/image-host/config/", {
+			const res = await fetch(withBasePath("/api/image-host/config/"), {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({

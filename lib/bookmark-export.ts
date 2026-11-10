@@ -1,4 +1,5 @@
 import type { NavCategory, WebsiteData } from "@/types";
+import { withBasePath } from "@/lib/base-path";
 
 // Keep each entry on one line for bookmark importers that parse line by line.
 function escapeHtml(value: string): string {
@@ -66,7 +67,7 @@ export function exportBookmarksHtml(websiteData: WebsiteData, baseUrl?: string):
 }
 
 export function downloadBookmarksHtml(websiteData: WebsiteData): void {
-	const homepageUrl = new URL("/", window.location.href).href;
+	const homepageUrl = new URL(withBasePath("/"), window.location.href).href;
 	const blob = new Blob([exportBookmarksHtml(websiteData, homepageUrl)], {
 		type: "text/html;charset=utf-8",
 	});

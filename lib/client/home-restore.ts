@@ -1,3 +1,5 @@
+import { stripBasePath } from "@/lib/base-path";
+
 const HOME_SNAPSHOT_KEY = "go-nav:home-snapshot";
 const HOME_RESTORE_FLAG_KEY = "go-nav:home-restore";
 const PAGE_SNAPSHOT_KEY = "goNavPageSnapshot";
@@ -75,14 +77,15 @@ export function readPageSnapshot(routeKey: string): HomeSnapshot | null {
 
 export function getCurrentPageRouteKey(): string {
 	const url = new URL(window.location.href);
-	if (url.pathname === "/") {
+	const pathname = stripBasePath(url.pathname);
+	if (pathname === "/") {
 		const slug = url.searchParams.get("site");
 		return slug ? `site:${slug}` : "/";
 	}
-	const slug = url.pathname.startsWith("/site/")
-		? url.pathname.slice("/site/".length).split("/")[0]
+	const slug = pathname.startsWith("/site/")
+		? pathname.slice("/site/".length).split("/")[0]
 		: null;
-	if (!slug) return url.pathname;
+	if (!slug) return pathname;
 	try {
 		return `site:${decodeURIComponent(slug)}`;
 	} catch {

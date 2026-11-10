@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import {
 	Button,
 	Input,
@@ -44,7 +46,7 @@ export function LoginForm({
 		submittingRef.current = true;
 		setStatus("submitting");
 		try {
-			const res = await fetch("/api/auth/login/", {
+			const res = await fetch(withBasePath("/api/auth/login/"), {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ username, password }),

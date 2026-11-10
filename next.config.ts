@@ -14,6 +14,16 @@ const isStatic = BUILD_MODE === "static";
 const isHtml = BUILD_MODE === "html";
 const isExport = isStatic || isHtml;
 
+// 部署子路径（例如 /laoin-site）。该值会内联进客户端产物，修改后必须重新构建。
+function normalizeBasePath(value: string | undefined): string {
+	const trimmed = (value ?? "").trim();
+	if (!trimmed || trimmed === "/") return "";
+	const withLeadingSlash = trimmed.startsWith("/") ? trimmed : `/${trimmed}`;
+	return withLeadingSlash.replace(/\/+$/, "");
+}
+
+const basePath = normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH);
+
 const basePageExtensions = ["js", "jsx", "md", "mdx", "ts", "tsx"];
 // server 专用页面只在动态模式纳入；html 专用配置后台只进入可分发版本。
 const pageExtensions = isHtml
@@ -24,6 +34,7 @@ const pageExtensions = isHtml
 
 const nextConfig: NextConfig = {
 	distDir: process.env.NEXT_DIST_DIR || ".next",
+	...(basePath ? { basePath } : {}),
 	// export 模式生成纯静态文件；html 模式直接输出到可分发的 web/。
 	...(isExport
 		? {
@@ -49,6 +60,7 @@ const nextConfig: NextConfig = {
 			: isStatic
 				? "static"
 				: "server",
+		NEXT_PUBLIC_BASE_PATH: basePath,
 	},
 	trailingSlash: true,
 	reactCompiler: true,

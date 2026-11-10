@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import { useScrollContainment } from "@/hooks/use-scroll-containment";
 
 import {
@@ -201,7 +203,7 @@ export function DataSyncEditor() {
 	const loadConfig = useCallback(async () => {
 		setLoading(true);
 		try {
-			const res = await fetch("/api/sync/config/", { method: "GET" });
+			const res = await fetch(withBasePath("/api/sync/config/"), { method: "GET" });
 			const data = (await res.json().catch(() => ({}))) as
 				| PublicDataSyncConfig
 				| { error?: string };
@@ -232,7 +234,7 @@ export function DataSyncEditor() {
 		async (silent = false) => {
 			setSaving(true);
 			try {
-				const res = await fetch("/api/sync/config/", {
+				const res = await fetch(withBasePath("/api/sync/config/"), {
 					method: "PUT",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
@@ -295,7 +297,7 @@ export function DataSyncEditor() {
 				let result: DataSyncRunResult | null = null;
 
 				if (enableLogModal) {
-					const res = await fetch("/api/sync/action/", {
+					const res = await fetch(withBasePath("/api/sync/action/"), {
 						method: "POST",
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({ provider, action, target, stream: true }),
@@ -351,7 +353,7 @@ export function DataSyncEditor() {
 						throw new Error("同步已结束，但未收到最终结果");
 					}
 				} else {
-					const res = await fetch("/api/sync/action/", {
+					const res = await fetch(withBasePath("/api/sync/action/"), {
 						method: "POST",
 						headers: { "Content-Type": "application/json" },
 						body: JSON.stringify({ provider, action, target }),
@@ -413,7 +415,7 @@ export function DataSyncEditor() {
 		setWebdavBackupsLoading(true);
 		try {
 			await saveConfig(true);
-			const res = await fetch("/api/sync/webdav-backups/", { method: "GET" });
+			const res = await fetch(withBasePath("/api/sync/webdav-backups/"), { method: "GET" });
 			const data = (await res.json().catch(() => ({}))) as
 				| { items?: WebDavBackupItem[]; error?: string }
 				| { message?: string };
@@ -462,7 +464,7 @@ export function DataSyncEditor() {
 		}
 		setWebdavDeleting(true);
 		try {
-			const res = await fetch("/api/sync/webdav-backups/", {
+			const res = await fetch(withBasePath("/api/sync/webdav-backups/"), {
 				method: "DELETE",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ path: webdavTarget }),

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { getNav } from "@/lib/config";
+import { getIconImageSrc } from "@/lib/icon";
 import { ThemeProvider } from "@/components/theme-provider";
 import { AppToastProvider } from "@/components/app-toast-provider";
 import { FocusRingGuard } from "@/components/focus-ring-guard";
@@ -33,7 +34,9 @@ export function generateMetadata(): Metadata {
 		description: nav.description,
 		keywords: nav.keywords,
 		authors: nav.author ? [{ name: nav.author }] : undefined,
-		icons: nav.favicon ? { icon: nav.favicon } : undefined,
+		icons: nav.favicon
+			? { icon: getIconImageSrc(nav.favicon) ?? undefined }
+			: undefined,
 		robots:
 			nav.accessProtection?.enabled === true
 				? { index: false, follow: false }

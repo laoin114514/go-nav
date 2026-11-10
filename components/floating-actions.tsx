@@ -3,6 +3,7 @@ import { AiOutlineQrcode } from "react-icons/ai";
 import { Button, toast } from "@heroui/react";
 import Image from "next/image";
 import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { withBasePath } from "@/lib/base-path";
 import { useAtomValue, useSetAtom } from "jotai";
 import { BiBookmarkPlus } from "react-icons/bi";
 import {
@@ -187,7 +188,7 @@ export const FloatingActions = memo(function FloatingActions({
 						<div className="relative w-44 rounded-2xl bg-(--primary-foreground) p-4 text-center shadow-lg">
 							<div className="mx-auto flex h-28 w-28 items-center justify-center rounded-xl bg-default p-2 dark:bg-zinc-700">
 								<Image
-									src={qrCode}
+									src={withBasePath(qrCode)}
 									alt="公众号二维码"
 									width={112}
 									height={112}

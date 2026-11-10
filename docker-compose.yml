@@ -1,6 +1,11 @@
 services:
   go-nav:
-    build: .
+    build:
+      context: .
+      args:
+        # 默认部署到 /laoin-site；设为空字符串可部署在根路径。
+        NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH-/laoin-site}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
     image: ${IMAGE_NAME:-go-nav}:${IMAGE_TAG:-latest}
     restart: unless-stopped
     ports:
@@ -9,6 +14,9 @@ services:
       ADMIN_USER: ${ADMIN_USER:-admin}
       ADMIN_PASS: ${ADMIN_PASS:-admin123}
       # Optional. Leave unset to auto-generate and persist in ./go-nav-data/.session-secret.
-      # SESSION_SECRET: ${SESSION_SECRET}
+      SESSION_SECRET: ${SESSION_SECRET}
+      # 与构建时保持一致，供服务端运行时代码读取。
+      NEXT_PUBLIC_BASE_PATH: ${NEXT_PUBLIC_BASE_PATH-/laoin-site}
+      NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
     volumes:
       - ./go-nav-data:/app/data

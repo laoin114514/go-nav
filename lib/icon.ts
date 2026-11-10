@@ -1,3 +1,5 @@
+import { withBasePath } from "@/lib/base-path";
+
 export function isInlineSvgIcon(value: string | undefined): boolean {
 	return /^<svg[\s>]/i.test(value?.trimStart() ?? "");
 }
@@ -14,7 +16,7 @@ export function getIconImageSrc(value: string | undefined): string | null {
 		icon.startsWith("/") ||
 		icon.startsWith("data:image/")
 	) {
-		return icon;
+		return withBasePath(icon);
 	}
 	return null;
 }

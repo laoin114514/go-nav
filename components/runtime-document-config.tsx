@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import type { NavConfig, PluginConfig } from "@/types";
+import { getIconImageSrc } from "@/lib/icon";
 import { pluginHasRenderablePayload } from "@/lib/plugin-config";
 
 const RUNTIME_NODE_ATTRIBUTE = "data-go-nav-runtime";
@@ -50,7 +51,7 @@ function setNamedMeta(name: string, rawValue: string | undefined) {
 }
 
 function setFavicon(rawValue: string | undefined) {
-	const value = rawValue?.trim() ?? "";
+	const value = getIconImageSrc(rawValue) ?? "";
 	let element = document.head.querySelector<HTMLLinkElement>(
 		'link[rel~="icon"]',
 	);

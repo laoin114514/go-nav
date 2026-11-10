@@ -5,6 +5,7 @@ import {
 	FOCUS_RING_CLASS,
 	PREVIEW_CARD_SURFACE_CLASS,
 } from "../ui/ui.constants";
+import { withBasePath } from "@/lib/base-path";
 import { SiteCardLinkShell } from "./site-card-link-shell";
 import type { SiteCardVisualProps } from "./site-card.types";
 
@@ -48,7 +49,7 @@ export function PreviewSiteCard({
 						{site.previewImage ? (
 							// eslint-disable-next-line @next/next/no-img-element
 							<img
-								src={site.previewImage}
+								src={withBasePath(site.previewImage)}
 								alt=""
 								loading="lazy"
 								decoding="async"

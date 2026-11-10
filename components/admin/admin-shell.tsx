@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import {
     AlertDialog,
     Button,
@@ -550,7 +552,7 @@ function AdminShellContent({ children }: { children?: React.ReactNode }) {
 		setIsLeaving(true);
 		try {
 			if (destination === "logout") {
-				const res = await fetch("/api/auth/logout/", { method: "POST" });
+				const res = await fetch(withBasePath("/api/auth/logout/"), { method: "POST" });
 				if (!res.ok) throw new Error(`退出失败 (${res.status})`);
 			}
 			setPendingLeave(null);
@@ -706,7 +708,9 @@ function AdminShellContent({ children }: { children?: React.ReactNode }) {
 					{/* 桌面端 Breadcrumbs */}
 					<div className="hidden lg:block">
 						<Breadcrumbs>
-							<Breadcrumbs.Item href="/admin/categories/">管理后台</Breadcrumbs.Item>
+							<Breadcrumbs.Item href={withBasePath("/admin/categories/")}>
+								管理后台
+							</Breadcrumbs.Item>
 							<Breadcrumbs.Item>{currentItem.label}</Breadcrumbs.Item>
 						</Breadcrumbs>
 					</div>

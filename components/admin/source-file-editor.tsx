@@ -1,5 +1,7 @@
 "use client";
 
+import { withBasePath } from "@/lib/base-path";
+
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Button, Input, toast } from "@heroui/react";
 import CodeMirror, {
@@ -135,7 +137,7 @@ export function SourceFileEditor() {
 	const loadContent = useCallback(async () => {
 		setLoading(true);
 		try {
-			const res = await fetch("/api/source-file/");
+			const res = await fetch(withBasePath("/api/source-file/"));
 			if (!res.ok) {
 				const data = await res.json().catch(() => ({}));
 				toast.danger(data.error || "加载失败");
@@ -385,7 +387,7 @@ export function SourceFileEditor() {
 	const handleSave = useCallback(async () => {
 		setSaving(true);
 		try {
-			const res = await fetch("/api/source-file/", {
+			const res = await fetch(withBasePath("/api/source-file/"), {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ content }),

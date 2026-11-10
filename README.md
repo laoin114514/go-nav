@@ -330,6 +330,8 @@ pnpm docker:down
 
 默认使用项目目录下的 `go-nav-data/` 持久化 `/app/data`。配置、上传文件和自动生成的登录密钥都保存在该目录中。
 
+如需把站点部署到子路径（例如 `https://example.com/nav/`），在构建前设置 `NEXT_PUBLIC_BASE_PATH=/nav` 并重新构建镜像；反向代理需保留该前缀转发。当前仓库的 `docker-compose.yml` 默认使用 `/laoin-site`。
+
 ### 直接运行镜像
 
 ```bash
@@ -444,6 +446,7 @@ data/
 | `DATA_DIR`             | `./data`             | Server 模式和构建时的数据目录          |
 | `DATA_FILE_FORMAT`     | `json`               | 配置文件优先格式，可选 `json` / `yaml` |
 | `NEXT_PUBLIC_SITE_URL` | -                    | 用于生成 sitemap 的网站地址            |
+| `NEXT_PUBLIC_BASE_PATH` | 空（Compose 默认 `/laoin-site`） | 部署子路径，构建时内联，修改后需重建 |
 | `PORT`                 | `3000`               | Docker Compose 宿主机映射端口          |
 
 HTML 和 Static 模式没有服务端登录与请求校验能力，因此后台登录和前台访问密码保护均不可用，`ADMIN_USER`、`ADMIN_PASS` 和 `SESSION_SECRET` 对它们无效。
