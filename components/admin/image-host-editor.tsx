@@ -83,7 +83,7 @@ const DEFAULT_DRAFT: ImageHostDraft = {
 		branch: "main",
 		publicUrlPrefix: "",
 		token: "",
-		commitMessage: "chore: upload Go Nav image",
+		commitMessage: "chore: upload laoin小站 image",
 		hasToken: false,
 	},
 	webdav: {
@@ -926,7 +926,7 @@ export function ImageHostEditor() {
 										}
 									>
 										<Label className="sr-only">GitHub 仓库</Label>
-										<Input placeholder="dengxiwang/go-nav-img" />
+										<Input placeholder="laoin114514/go-nav-img" />
 									</TextField>
 								</Field>
 								<Field label="分支">
@@ -1002,7 +1002,7 @@ export function ImageHostEditor() {
 										}
 									>
 										<Label className="sr-only">GitHub 提交信息</Label>
-										<Input placeholder="chore: upload Go Nav image" />
+										<Input placeholder="chore: upload laoin小站 image" />
 									</TextField>
 								</Field>
 							</Card.Content>

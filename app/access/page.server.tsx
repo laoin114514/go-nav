@@ -34,7 +34,7 @@ export default async function SiteAccessPage({
 
 	return (
 		<SiteAccessForm
-			siteName={nav.name || nav.title || "Go Nav"}
+			siteName={nav.name || nav.title || "laoin小站"}
 			siteLogo={nav.logo}
 			siteDescription={nav.description}
 			nextPath={nextPath}

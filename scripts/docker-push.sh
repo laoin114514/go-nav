@@ -35,7 +35,7 @@ if [ -n "$ENV_PUSH_LATEST_SET" ]; then
 fi
 
 PACKAGE_VERSION="${npm_package_version:-$(node -p "require('./package.json').version")}"
-DEFAULT_IMAGE_NAME="doxwant/go-nav"
+DEFAULT_IMAGE_NAME="go-nav"
 
 IMAGE_NAME="${IMAGE_NAME:-$DEFAULT_IMAGE_NAME}"
 IMAGE_TAG="${IMAGE_TAG:-$PACKAGE_VERSION}"

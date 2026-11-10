@@ -42,7 +42,7 @@ export function HtmlAdminRuntime({ children }: { children: ReactNode }) {
 			.then(([nav, websiteData]) => {
 				assertRuntimeConfig(nav, websiteData);
 				setConfig({ nav, websiteData });
-				document.title = `${nav.name || "Go Nav"} 配置后台`;
+				document.title = `${nav.name || "laoin小站"} 配置后台`;
 			})
 			.catch((reason: unknown) => {
 				if (controller.signal.aborted) return;

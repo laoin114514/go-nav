@@ -73,12 +73,7 @@ const nextConfig: NextConfig = {
 	images: {
 		// 纯静态服务器没有 /_next/image 运行时接口，导出模式直接使用原图地址。
 		unoptimized: isExport,
-		remotePatterns: [
-			{
-				protocol: "https",
-				hostname: "www.gotab.cn",
-			},
-		],
+		remotePatterns: [],
 	},
 	turbopack: {
 		rules: {

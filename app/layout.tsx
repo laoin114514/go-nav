@@ -17,8 +17,8 @@ export const viewport: Viewport = {
 export function generateMetadata(): Metadata {
 	if (isHtmlDeployment) {
 		return {
-			title: "Go Nav",
-			description: "Go Nav HTML runtime configuration",
+			title: "laoin小站",
+			description: "laoin小站 HTML runtime configuration",
 		};
 	}
 

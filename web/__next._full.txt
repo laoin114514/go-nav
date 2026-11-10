@@ -1,18 +1,48 @@
 1:"$Sreact.fragment"
-2:I[75732,["6338","static/chunks/6338-cb1b4be924e430d0.js","7142","static/chunks/7142-7795418683e27097.js","7177","static/chunks/app/layout-3dfc3d08d261b420.js"],"ThemeProvider"]
-3:I[31900,[],""]
-4:I[70826,[],""]
-5:I[61949,["1949","static/chunks/1949-1d46b76a3b1f3027.js","4345","static/chunks/app/not-found-f092fdf33ae175de.js"],""]
-6:I[2164,["6338","static/chunks/6338-cb1b4be924e430d0.js","7142","static/chunks/7142-7795418683e27097.js","7177","static/chunks/app/layout-3dfc3d08d261b420.js"],"AppToastProvider"]
-8:I[32233,[],"OutletBoundary"]
-9:"$Sreact.suspense"
-b:I[32233,[],"ViewportBoundary"]
-d:I[32233,[],"MetadataBoundary"]
-f:I[9080,[],"default",1]
-:HL["/_next/static/css/52dd74dc822ea7ae.css","style"]
-0:{"P":null,"c":["",""],"q":"","i":false,"f":[[["",{"children":["(site)",{"children":["__PAGE__",{},"$undefined","$undefined",4608]},"$undefined","$undefined",4608]},"$undefined","$undefined",4624],[["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/52dd74dc822ea7ae.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","className":"h-full antialiased","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){\n  try{\n    if(\"scrollRestoration\" in window.history){\n      window.history.scrollRestoration=\"manual\";\n    }\n  }catch(_e){}\n})()"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){\n  var m=\"system\";\n  var d=document.documentElement;\n  function apply(dark){\n    if(dark){d.classList.add(\"dark\");d.style.colorScheme=\"dark\"}\n    else{d.classList.remove(\"dark\");d.style.colorScheme=\"light\"}\n  }\n  if(m===\"dark\"){apply(true)}\n  else if(m===\"light\"){apply(false)}\n  else{apply(window.matchMedia(\"(prefers-color-scheme:dark)\").matches)}\n})()"}}]]}],["$","body",null,{"className":"min-h-full flex flex-col","children":["$","$L2",null,{"mode":"system","children":[["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex min-h-dvh flex-col items-center justify-center px-6","children":["$","div",null,{"className":"flex flex-col items-center gap-6 text-center","children":[["$","div",null,{"className":"flex flex-col items-center gap-2","children":[["$","span",null,{"className":"text-8xl font-bold text-primary/20","children":"404"}],["$","h1",null,{"className":"text-xl font-semibold","children":"页面未找到"}]]}],["$","p",null,{"className":"max-w-sm text-sm text-muted","children":"抱歉，您访问的页面不存在或已被移除。"}],["$","$L5",null,{"href":"/","className":"inline-flex items-center rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors [@media(hover:hover)]:hover:bg-zinc-700 dark:bg-white dark:text-zinc-950 dark:[@media(hover:hover)]:hover:bg-zinc-200","children":"返回首页"}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}],["$","$L6",null,{}]]}]}]]}]]}],{"children":[["$","$1","c",{"children":[null,"$L7"]}],{"children":[["$","$1","c",{"children":[null,null,["$","$L8",null,{"children":["$","$9",null,{"name":"Next.MetadataOutlet","children":"$@a"}]}]]}],{},null,false,null]},null,false,null]},null,false,null],["$","$1","h",{"children":[null,["$","$Lb",null,{"children":"$Lc"}],["$","div",null,{"hidden":true,"children":["$","$Ld",null,{"children":["$","$9",null,{"name":"Next.Metadata","children":"$Le"}]}]}],null]}],false]],"m":"$undefined","G":["$f",[]],"S":true,"h":null,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"enyf6f3gZ6VCliv1Wdt1d"}
-10:I[1892,["6266","static/chunks/160fd389-b03d818e4f29c25b.js","447","static/chunks/1a0a4af0-caa0ea3d1c415ebe.js","6338","static/chunks/6338-cb1b4be924e430d0.js","1952","static/chunks/1952-73eca3c67e44c1ba.js","410","static/chunks/410-62f80429baacb4c8.js","8133","static/chunks/8133-85f68ee5b268d203.js","3955","static/chunks/3955-00b788dd4d0e5092.js","8255","static/chunks/8255-b681cee83c38cc80.js","138","static/chunks/138-8daca438d3f2124e.js","4136","static/chunks/4136-cd25d35b9bfb7ec1.js","386","static/chunks/386-f6177ceabdcdfd40.js","4260","static/chunks/4260-58735434c3dd0975.js","1949","static/chunks/1949-1d46b76a3b1f3027.js","449","static/chunks/449-a8a5423639987e2e.js","7730","static/chunks/7730-944fd7ec053e6a4f.js","6750","static/chunks/app/(site)/layout-27312e98fe835ead.js"],"RuntimeSiteShell"]
-7:[["$","$L10",null,{}],["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]
-c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-a:null
-e:[["$","title","0",{"children":"Go Nav"}],["$","meta","1",{"name":"description","content":"Go Nav HTML runtime configuration"}]]
+2:"static/chunks/5419-0c7d9e86ab40ff20.js"
+3:"static/chunks/1793-9ff54c754b558ae6.js"
+4:"static/chunks/84-230ab91b3232193b.js"
+5:"static/chunks/7328-9e077160fc65fba1.js"
+6:"static/chunks/app/layout-caa7bc0b3ce437d4.js"
+7:I[51115,["5419","$2","1793","$3","84","$4","7328","$5","7177","$6"],"ThemeProvider"]
+8:I[35555,["5419","$2","1793","$3","84","$4","7328","$5","7177","$6"],"FocusRingGuard"]
+9:"PageNavigationProvider"
+a:I[63596,["5419","$2","1793","$3","84","$4","7328","$5","7177","$6"],"$9"]
+b:I[89416,[],""]
+c:I[49566,[],""]
+d:"static/chunks/2713-efbe473b0473135b.js"
+e:"static/chunks/app/not-found-753c8c8977ac240e.js"
+f:I[82713,["2713","$d","4345","$e"],""]
+10:"AppToastProvider"
+11:I[73899,["5419","$2","1793","$3","84","$4","7328","$5","7177","$6"],"$10"]
+15:I[60581,[],"OutletBoundary"]
+16:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[60581,[],"$18"]
+1b:"MetadataBoundary"
+1c:I[60581,[],"$1b"]
+1e:I[29700,[],"default",1]
+:HL["/_next/static/css/2d3763ec5fe07482.css","style"]
+14:[["children",{"s":"__PAGE__","h":512,"d":{"r":["$","$1","c",{"children":[null,null,["$","$L15",null,{"children":["$","$16",null,{"name":"Next.MetadataOutlet","children":"$@17"}]}]]}],"p":false,"v":null}}]]
+12:[["children",{"s":"(site)","h":512,"d":{"r":["$","$1","c",{"children":[null,"$L13"]}],"p":false,"v":null},"c":"$Q14"}]]
+0:{"P":null,"c":["",""],"q":"","i":false,"t":{"t":{"s":"","h":528,"d":{"r":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/2d3763ec5fe07482.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","className":"h-full antialiased","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){\n  try{\n    if(\"scrollRestoration\" in window.history){\n      window.history.scrollRestoration=\"manual\";\n    }\n  }catch(_e){}\n})()"}}],["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){\n  var m=\"system\";\n  var d=document.documentElement;\n  function apply(dark){\n    if(dark){d.classList.add(\"dark\");d.style.colorScheme=\"dark\"}\n    else{d.classList.remove(\"dark\");d.style.colorScheme=\"light\"}\n  }\n  if(m===\"dark\"){apply(true)}\n  else if(m===\"light\"){apply(false)}\n  else{apply(window.matchMedia(\"(prefers-color-scheme:dark)\").matches)}\n})()"}}]]}],["$","body",null,{"className":"min-h-full flex flex-col","children":["$","$L7",null,{"mode":"system","children":[["$","$L8",null,{}],["$","$La",null,{"children":["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"flex min-h-dvh flex-col items-center justify-center px-6","children":["$","div",null,{"className":"flex flex-col items-center gap-6 text-center","children":[["$","div",null,{"className":"flex flex-col items-center gap-2","children":[["$","span",null,{"className":"text-8xl font-bold text-primary/20","children":"404"}],["$","h1",null,{"className":"text-xl font-semibold","children":"页面未找到"}]]}],["$","p",null,{"className":"max-w-sm text-sm text-muted","children":"抱歉，您访问的页面不存在或已被移除。"}],["$","$Lf",null,{"href":"/","className":"inline-flex items-center rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors [@media(hover:hover)]:hover:bg-zinc-700 dark:bg-white dark:text-zinc-950 dark:[@media(hover:hover)]:hover:bg-zinc-200","children":"返回首页"}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","$L11",null,{}]]}]}]]}]]}],"p":false,"v":null},"c":"$Q12"},"h":{"r":["$","$1","h",{"children":[null,["$","$L19",null,{"children":"$L1a"}],["$","$L1c",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$16",null,{"name":"Next.Metadata","children":"$L1d"}]}],null]}],null]}],"p":false,"v":null}},"m":"$undefined","G":["$1e",[]],"S":true,"r":"$undefined","s":"$undefined","a":"$undefined","l":"$undefined","p":"$undefined","d":"$undefined","b":"nBmGEAnMqeMeNYCGtWo6f"}
+1f:"static/chunks/ec3a5b6f-61de6a74507ac550.js"
+20:"static/chunks/23190a91-e1b5ba44eb84e110.js"
+21:"static/chunks/9cba9ca5-0a7550f3b29974e2.js"
+22:"static/chunks/7444-511a1e34d497209f.js"
+23:"static/chunks/96-af2cfef5f9d51a4f.js"
+24:"static/chunks/6302-d29e6e3a23d0cdf4.js"
+25:"static/chunks/287-e8affa50284dbb31.js"
+26:"static/chunks/7016-da1da9b68f16bf7d.js"
+27:"static/chunks/1643-b6f14ff9ec2edd0d.js"
+28:"static/chunks/4085-8ce0962f4d3eeafb.js"
+29:"static/chunks/9351-b8aee6231f0a4447.js"
+2a:"static/chunks/1550-80329a6a3dbeaade.js"
+2b:"static/chunks/8028-1c525b427a8cd96c.js"
+2c:"static/chunks/app/(site)/layout-8598c9a574eb8b8f.js"
+2d:"RuntimeSiteShell"
+2e:I[84975,["2766","$1f","8631","$20","1210","$21","5419","$2","1793","$3","7444","$22","84","$4","96","$23","6302","$24","287","$25","7016","$26","1643","$27","4085","$28","9351","$29","2713","$d","1550","$2a","8028","$2b","6750","$2c"],"$2d"]
+13:[["$","$L2e",null,{}],["$","$Lb",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$Lc",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]
+1a:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+17:null
+1d:[["$","title","0",{"children":"laoin小站"}],["$","meta","1",{"name":"description","content":"laoin小站 HTML runtime configuration"}]]

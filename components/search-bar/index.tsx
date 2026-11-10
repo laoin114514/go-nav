@@ -5,7 +5,6 @@ import { Label, SearchField } from "@heroui/react";
 import { useState } from "react";
 import { recordVisit } from "@/hooks/use-recent-visits";
 import { openSiteWithPreference } from "@/lib/client/site-link";
-import { withAuthorBaiduTracking } from "@/lib/external-url";
 import type { HeaderEngineState, HeaderSearchConfig } from "../header.types";
 import { SearchBarEngineSelect } from "./search-bar-engine-select";
 import { SearchLocalResultsPanel } from "./search-local-results-panel";
@@ -84,9 +83,7 @@ export function SearchBar({
 	const runExternalSearch = (q: string) => {
 		const engine = engines.find((item) => item.id === engineId);
 		if (!engine) return;
-		const url = withAuthorBaiduTracking(
-			engine.url.replace("{query}", encodeURIComponent(q)),
-		);
+		const url = engine.url.replace("{query}", encodeURIComponent(q));
 		if (layout?.linkTarget === "current") {
 			window.location.href = url;
 		} else {

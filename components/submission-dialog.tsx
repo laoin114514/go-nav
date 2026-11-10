@@ -52,7 +52,7 @@ function buildMailto(email: string, input: SubmissionInput): string {
 		`联系方式：${input.contact || "未填写"}`,
 		`补充说明：${input.note || "未填写"}`,
 		"",
-		"此邮件由 Go Nav 投稿收录功能生成。",
+		"此邮件由 laoin小站 投稿收录功能生成。",
 	].join("\n");
 	return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -183,7 +183,7 @@ export function SubmissionDialog({
 										<Label>网站名称</Label>
 										<Input
 											autoComplete="organization"
-											placeholder="例如：Go Nav"
+											placeholder="例如：laoin小站"
 											maxLength={SUBMISSION_FIELD_LIMITS.title}
 										/>
 									</TextField>

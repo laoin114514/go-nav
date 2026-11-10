@@ -1,8 +1,8 @@
-# Go Nav
+# laoin小站
 
 一个配置驱动的个人 / 团队导航站，基于 Next.js 16、React 19、HeroUI v3 和 Tailwind CSS v4 构建。
 
-Go Nav 既可以作为带登录后台的 Node.js 应用运行，也可以打包成不依赖 Node.js 的静态网站。推荐使用新的 **HTML 运行时配置模式**：开发者只需构建一次，使用者下载 `web/` 后直接修改 `nav.json`、`website.json`，不必再次安装依赖或执行构建。
+laoin小站 既可以作为带登录后台的 Node.js 应用运行，也可以打包成不依赖 Node.js 的静态网站。推荐使用新的 **HTML 运行时配置模式**：开发者只需构建一次，使用者下载 `web/` 后直接修改 `nav.json`、`website.json`，不必再次安装依赖或执行构建。
 
 <div style="display: flex; width: fit-content; gap: 12px; flex-wrap: wrap;">
   <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License">
@@ -10,17 +10,10 @@ Go Nav 既可以作为带登录后台的 Node.js 应用运行，也可以打包�
   <img src="https://img.shields.io/badge/HeroUI-v3-purple" alt="HeroUI">
 </div>
 
-## 交流与支持
-
-- QQ 群：727809499
-- [加入 Go Nav QQ 交流群](https://qm.qq.com/cgi-bin/qm/qr?k=6N9Y0wlXF5txRjJcBqSYByj0fDsNwjIs&authKey=ziF+0yZBKLQB8GFFDJEHTXMaz35chgIPb88v98Vwdytvym5UlNMWOBOEwMAEHlMj&noverify=0)
-- [🔥 雨云服务器，高性价比，简洁易用的面板，值得您的信赖](https://www.rainyun.com/gotab_)
-
 ## 在线体验
 
-- 官网：[https://www.gotab.cn](https://www.gotab.cn)
-- 项目预览：[https://nav.gotab.cn](https://nav.gotab.cn)
-- GitHub：[https://github.com/dengxiwang/go-nav](https://github.com/dengxiwang/go-nav)
+- GitHub：[https://github.com/laoin114514](https://github.com/laoin114514)
+- 在线体验：[https://easo.laoin.work](https://easo.laoin.work)
 
 ## 功能特性
 
@@ -57,7 +50,7 @@ HTML 模式是面向静态分发的新打包方式。构建者需要 Node.js 和
 ### 1. 构建可分发成品
 
 ```bash
-git clone https://github.com/dengxiwang/go-nav.git
+git clone https://github.com/laoin114514/go-nav.git
 cd go-nav
 pnpm install
 pnpm build:html
@@ -249,7 +242,7 @@ Server 模式包含完整后台、API、登录、上传和备份功能。
 ### 本地开发
 
 ```bash
-git clone https://github.com/dengxiwang/go-nav.git
+git clone https://github.com/laoin114514/go-nav.git
 cd go-nav
 pnpm install
 cp .env.example .env.local
@@ -349,7 +342,7 @@ docker run -d \
   -e ADMIN_USER=admin \
   -e ADMIN_PASS=change-this-password \
   -v "$(pwd)/go-nav-data:/app/data" \
-  doxwant/go-nav:latest
+  go-nav:latest
 ```
 
 容器内的数据目录固定为 `/app/data`。挂载目录为空时，镜像会初始化默认配置和素材；已有文件不会被覆盖。
@@ -415,9 +408,9 @@ data/
 			"description": "常用工具集合",
 			"sites": [
 				{
-					"title": "Go Nav",
+					"title": "laoin小站",
 					"description": "导航站项目",
-					"url": "https://github.com/dengxiwang/go-nav",
+					"url": "https://github.com/laoin114514",
 					"icon": "/images/logo.svg",
 					"previewImage": "/uploads/go-nav-cover.webp",
 					"previewImages": [
@@ -529,13 +522,4 @@ HTML 模式是纯静态网站，浏览器没有服务器文件系统写入权限
 
 ## 开源协议
 
-本项目基于 [MIT License](./LICENSE) 开源。你可以自由使用、修改和商用，但请保留原始项目署名信息。
-
-## 捐赠支持
-
-如果这个项目帮到了你，欢迎扫码支持。
-
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; width: fit-content; gap: 16px;">
-  <img src="https://www.gotab.cn/images/wxpay.JPG" alt="微信捐赠二维码" width="180">
-  <img src="https://www.gotab.cn/images/alipay.JPG" alt="支付宝捐赠二维码" width="180">
-</div>
+本项目源自开源项目 **Go Nav**，遵循 [MIT License](./LICENSE) 开源。LICENSE 中保留了原始版权声明，本项目二次修改部分的版权归 laoin小站 所有。你可以自由使用、修改和商用，但请保留原始项目署名信息。

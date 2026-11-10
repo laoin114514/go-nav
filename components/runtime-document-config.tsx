@@ -8,7 +8,7 @@ const RUNTIME_NODE_ATTRIBUTE = "data-go-nav-runtime";
 
 export function RuntimeDocumentConfig({ nav }: { nav: NavConfig }) {
 	useEffect(() => {
-		document.title = nav.title?.trim() || nav.name?.trim() || "Go Nav";
+		document.title = nav.title?.trim() || nav.name?.trim() || "laoin小站";
 		setNamedMeta("description", nav.description);
 		setNamedMeta("keywords", nav.keywords?.join(", "));
 		setNamedMeta("author", nav.author);

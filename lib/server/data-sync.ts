@@ -193,7 +193,7 @@ const DEFAULT_SYNC_CONFIG: DataSyncConfig = {
 		branch: "main",
 		filePath: "data",
 		token: "",
-		commitMessage: "chore: backup Go Nav data",
+		commitMessage: "chore: backup laoin小站 data",
 	},
 	webdav: {
 		url: "",
@@ -994,7 +994,7 @@ async function pushToGitHub(
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
-				message: config.commitMessage || "chore: backup Go Nav data",
+				message: config.commitMessage || "chore: backup laoin小站 data",
 				tree: newTree.sha,
 				parents: pushBase.parentCommitSha ? [pushBase.parentCommitSha] : [],
 			}),

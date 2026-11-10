@@ -53,7 +53,7 @@ fs.writeFileSync(
 fs.writeFileSync(
 	path.join(outputDir, "部署说明.txt"),
 	[
-		"Go Nav HTML 运行时配置版",
+		"laoin小站 HTML 运行时配置版",
 		"",
 		"1. 请把本目录中的全部文件上传到网站根目录。",
 		"2. 后续直接修改 nav.json 或 website.json，刷新网页即可生效。",

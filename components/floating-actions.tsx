@@ -126,7 +126,7 @@ export const FloatingActions = memo(function FloatingActions({
 
 	const goToGithub = useCallback(() => {
 		window.open(
-			"https://github.com/dengxiwang/go-nav",
+			"https://github.com/laoin114514",
 			"_blank",
 			"noopener,noreferrer",
 		);

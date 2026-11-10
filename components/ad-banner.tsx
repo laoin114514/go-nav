@@ -12,7 +12,6 @@ import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
 import { Autoplay, Keyboard } from "swiper/modules";
 import { Swiper, SwiperSlide, type SwiperClass } from "swiper/react";
 import type { AdConfig, AdDisplayPosition, CardStyle } from "@/types";
-import { withAuthorBaiduTracking } from "@/lib/external-url";
 import {
 	DEFAULT_AD_AUTOPLAY_INTERVAL,
 	DEFAULT_HOME_AD_GAP,
@@ -60,7 +59,7 @@ function AdCard({
 }: AdCardProps) {
 	return (
 		<a
-			href={withAuthorBaiduTracking(ad.url)}
+			href={ad.url}
 			target="_blank"
 			rel="noopener noreferrer"
 			tabIndex={isAccessible ? 0 : -1}

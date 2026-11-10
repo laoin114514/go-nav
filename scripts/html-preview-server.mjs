@@ -57,7 +57,7 @@ server.on("listening", () => {
 
 	const url = `http://${host}:${address.port}/`;
 	console.log("");
-	console.log(`Go Nav 本地预览已启动：${url}`);
+	console.log(`laoin小站 本地预览已启动：${url}`);
 	console.log("关闭此窗口或按 Control+C 即可停止。");
 	console.log("");
 

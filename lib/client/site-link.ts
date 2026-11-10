@@ -2,7 +2,6 @@
 
 import { useSyncExternalStore } from "react";
 import type { LayoutConfig } from "@/types";
-import { withAuthorBaiduTracking } from "@/lib/external-url";
 
 export type SiteLinkMode = "intranet" | "public";
 
@@ -44,14 +43,14 @@ function sanitizeUrl(url: string | undefined): string {
 		if (/^localhost:\d+$/i.test(value) || /^127\.0\.0\.1:\d+$/i.test(value)) {
 			return `http://${value}`;
 		}
-		return withAuthorBaiduTracking(value);
+		return value;
 	}
-	if (value.startsWith("//")) return withAuthorBaiduTracking(`https:${value}`);
+	if (value.startsWith("//")) return `https:${value}`;
 	if (/^(localhost|127\.0\.0\.1)(:\d+)?(\/|$)/i.test(value)) {
 		return `http://${value}`;
 	}
 	if (/^[^\s/]+\.[^\s/]+/.test(value)) {
-		return withAuthorBaiduTracking(`https://${value}`);
+		return `https://${value}`;
 	}
 	return value;
 }

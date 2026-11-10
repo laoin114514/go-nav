@@ -99,7 +99,7 @@ const DEFAULT_DRAFT: SyncDraft = {
 		branch: "main",
 		filePath: "data",
 		token: "",
-		commitMessage: "chore: backup Go Nav data",
+		commitMessage: "chore: backup laoin小站 data",
 		hasToken: false,
 	},
 	webdav: {
@@ -619,7 +619,7 @@ export function DataSyncEditor() {
 										}
 									>
 										<Label className="sr-only">GitHub 仓库</Label>
-										<Input placeholder="dengxiwang/go-nav-data" />
+										<Input placeholder="laoin114514/go-nav-data" />
 									</TextField>
 								</Field>
 								<Field label="分支">
@@ -661,7 +661,7 @@ export function DataSyncEditor() {
 										}
 									>
 										<Label className="sr-only">GitHub 提交信息</Label>
-										<Input placeholder="chore: backup Go Nav data" />
+										<Input placeholder="chore: backup laoin小站 data" />
 									</TextField>
 								</Field>
 								<div className="md:col-span-2">

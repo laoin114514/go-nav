@@ -8,7 +8,6 @@ import type { LayoutConfig } from "@/types";
 import { recordVisit } from "@/hooks/use-recent-visits";
 import { openSiteWithPreference } from "@/lib/client/site-link";
 import { requestHomeRestore } from "@/lib/client/home-restore";
-import { withAuthorBaiduTracking } from "@/lib/external-url";
 import {
 	resolveSiteDetailPreviewImages,
 	type SiteDetailEntry,
@@ -114,7 +113,7 @@ export function SiteDetailPage({
 										网址
 									</span>
 									<a
-										href={withAuthorBaiduTracking(site.url)}
+										href={site.url}
 										target="_blank"
 										rel="noopener noreferrer"
 										className="mt-1.5 block break-all text-sm leading-6 text-zinc-700 underline-offset-4 hover:text-primary hover:underline dark:text-zinc-300"

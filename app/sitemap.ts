@@ -48,11 +48,11 @@ function resolveSiteOrigin(): string {
 	const raw =
 		process.env.NEXT_PUBLIC_SITE_URL ||
 		process.env.SITE_URL ||
-		"https://nav.gotab.cn";
+		"https://easo.laoin.work";
 	try {
 		const url = new URL(raw);
 		return url.origin;
 	} catch {
-		return "https://nav.gotab.cn";
+		return "https://easo.laoin.work";
 	}
 }

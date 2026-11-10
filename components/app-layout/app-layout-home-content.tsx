@@ -61,7 +61,7 @@ export function AppLayoutHomeContent({
 			<>
 				{homeAds}
 				<PageEmptyState
-					title="开始使用 Go Nav"
+					title="开始使用 laoin小站"
 					description="还没有添加任何网站分类和内容，请先在后台管理中添加分类与网站。"
 				/>
 			</>

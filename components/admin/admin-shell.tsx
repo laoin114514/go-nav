@@ -36,7 +36,6 @@ import {
     BiBookContent,
     BiArchive,
     BiCode,
-    BiDonateHeart,
     BiImport,
     BiFile,
     BiListCheck,
@@ -77,7 +76,6 @@ type RouteKey =
 	| "ads"
 	| "engines"
 	| "plugins"
-	| "donation"
 	| "backup"
 	| "image-host"
 	| "sync"
@@ -211,17 +209,6 @@ const NAV_SECTIONS: { title: string; items: NavItem[] }[] = [
 				label: "图床设置",
 				icon: <BiImage className="size-5" />,
 				desc: "WebDAV / GitHub 图片上传",
-			},
-		],
-	},
-	{
-		title: "支持",
-		items: [
-			{
-				key: "donation",
-				label: "打赏捐赠",
-				icon: <BiDonateHeart className="size-5" />,
-				desc: "支持 Go Nav 项目",
 			},
 		],
 	},
@@ -640,12 +627,12 @@ function AdminShellContent({ children }: { children?: React.ReactNode }) {
 				{/* 底部信息 */}
 				<div className="border-t border-gray-100 px-5 py-4 dark:border-neutral-800">
 					<p className="text-center text-xs font-medium">
-						基于开源项目：
+						GitHub：
 						<Link
-							href="https://github.com/dengxiwang/go-nav"
+							href="https://github.com/laoin114514"
 							className="text-xs text-primary"
 						>
-							github.com/dengxiwang/go-nav
+							github.com/laoin114514
 							<Link.Icon />
 						</Link>
 					</p>

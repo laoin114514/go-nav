@@ -128,7 +128,7 @@ interface ImageHostAssetManifest {
 }
 
 const DEFAULT_PATH_TEMPLATE = "/img/{yyyy}/{m}/{d}";
-const DEFAULT_COMMIT_MESSAGE = "chore: upload Go Nav image";
+const DEFAULT_COMMIT_MESSAGE = "chore: upload laoin小站 image";
 const DEFAULT_ASSET_MANIFEST: ImageHostAssetManifest = {
 	version: 1,
 	assets: [],
